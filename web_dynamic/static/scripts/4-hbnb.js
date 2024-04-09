@@ -47,7 +47,10 @@ $(document).ready(function () {
   }
 
   checkAPIStatus();
-  loadPlaces();
+
+  $('#search-button').click(function () {
+    loadPlaces();
+  });
 
   $('input[type="checkbox"]').change(function () {
     const amenityID = $(this).data('id');
