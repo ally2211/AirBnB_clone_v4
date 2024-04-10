@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ objects that handle all default RestFul API actions for Places """
 from models.state import State
@@ -177,16 +176,5 @@ def places_search():
         d = p.to_dict()
         d.pop('amenities', None)
         places.append(d)
-        
-    places_list = []
-    for place in places:
-        place_dict = {
-            'id': place.id,
-            'name': place.name,
-            'description': place.description,
-            'price_by_night': place.price_by_night
-            # Add other fields as needed
-        }
-        places_list.append(place_dict)
 
     return jsonify(places)
